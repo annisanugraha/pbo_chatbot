@@ -1,0 +1,32 @@
+.fx-main-color {
+    -fx-background-color: #111111; /* black main color */
+}
+
+.fx-sidebar-color{
+    -fx-background-color: #1e1e1e; /* Dark gray sidebar color */
+}
+
+.rounded-textfield {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #ababab; /* contoh warna border */
+    -fx-border-width: 1px;
+}
+
+.macos-style-search-bar-dark {
+    -fx-background-color: #3A3A3C;
+    -fx-background-radius: 8;
+    -fx-border-color: #505053; /* Atau bisa juga tanpa border eksplisit */
+    -fx-border-radius: 8;
+    -fx-border-width: 1px; /* Atau 0px jika tidak ingin border */
+    -fx-font-family: "San Francisco Display", "Helvetica Neue", Arial, sans-serif;
+    -fx-prompt-text-fill: #8E8E93;
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 5px 10px;
+}
+
+.macos-style-search-bar-dark:focused {
+    -fx-border-color: #0A84FF;
+    /* -fx-effect: dropshadow(gaussian, rgba(10, 132, 255, 0.6), 5, 0, 0, 0); */
+}
