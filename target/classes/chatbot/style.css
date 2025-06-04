@@ -1,9 +1,9 @@
 .fx-main-color {
-    -fx-background-color: #111111; /* black main color */
+    -fx-background-color: #8E8E93; /* black main color */
 }
 
 .fx-sidebar-color{
-    -fx-background-color: #1e1e1e; /* Dark gray sidebar color */
+    -fx-background-color: #FFFFFF; /* Dark gray sidebar color */
 }
 
 .rounded-textfield {
