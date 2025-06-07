@@ -168,5 +168,105 @@
     "sender": "BOT",
     "content": "Rektor Universitas Dian Nuswantoro saat ini adalah Prof. Dr. Pulung Nurtantio Andono, S.T., M.Kom.",
     "timestamp": "2025-06-07T13:49:45.264329800"
+  },
+  {
+    "sender": "USER",
+    "content": "sipa dosen pbo",
+    "timestamp": "2025-06-07T15:51:25.803346600"
+  },
+  {
+    "sender": "USER",
+    "content": "dosen pbo",
+    "timestamp": "2025-06-07T15:51:40.697224200"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal senin",
+    "timestamp": "2025-06-07T16:00:56.705709200"
+  },
+  {
+    "sender": "BOT",
+    "content": "Untuk hari Senin, jadwalnya adalah: 12.30-15.00 Rangkaian Logika Digital di H.5.4, dan 15.30-17.10 Pemrograman Web Lanjut di H.6.1.",
+    "timestamp": "2025-06-07T16:00:56.751209400"
+  },
+  {
+    "sender": "USER",
+    "content": "hari senin ada jadwal apa?",
+    "timestamp": "2025-06-07T16:01:09.839463600"
+  },
+  {
+    "sender": "BOT",
+    "content": "Untuk hari Senin, jadwalnya adalah: 12.30-15.00 Rangkaian Logika Digital di H.5.4, dan 15.30-17.10 Pemrograman Web Lanjut di H.6.1.",
+    "timestamp": "2025-06-07T16:01:09.847162400"
+  },
+  {
+    "sender": "USER",
+    "content": "perpus ada di mana yak?",
+    "timestamp": "2025-06-07T16:07:20.779690300"
+  },
+  {
+    "sender": "BOT",
+    "content": "di gedung A",
+    "timestamp": "2025-06-07T16:07:20.789209400"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal jarkom kapan?",
+    "timestamp": "2025-06-07T16:59:22.965602800"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jadwal jarak komputasi (Jarkom) Universitas Dian Nuswantoro biasanya disampaikan pada awal semester. Untuk informasi yang lebih spesifik, silakan periksa bulletin informasi akademik di website resmi universitas atau hubungi bagian yang bersangkutan dengan jadwal ini.",
+    "timestamp": "2025-06-07T16:59:29.729031500"
+  },
+  {
+    "sender": "USER",
+    "content": "maksudku jaringan komputer",
+    "timestamp": "2025-06-07T16:59:45.351272200"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jaringan komputer, juga disebut jaringan informasi atau jaringan komunikasi data, adalah sistem terhubung yang membentang layanan, perangkat, dan sumber daya komputasi yang saling berhubungan melalui media komunikasi. Jaringan komputer mengizinkan pengguna untuk bertukar informasi, membagi sumber daya, dan berbagi file antara komputer yang terhubung. Jaringan komputer dapat berupa jaringan lokal (LAN), jaringan area luas (WAN), jaringan internet, atau jaringan wireless (WLAN).",
+    "timestamp": "2025-06-07T16:59:54.600743200"
+  },
+  {
+    "sender": "USER",
+    "content": "nah adwal jaringan komputer kapan?",
+    "timestamp": "2025-06-07T17:00:14.863654500"
+  },
+  {
+    "sender": "BOT",
+    "content": "Tentang jaringan komputer di Universitas Dian Nuswantoro, biasanya jadwal kuliah komputer tersedia pada hari Senin sampai Jumat, mulai pukul 08.00 WIB sampai 16.00 WIB. Namun, jadwal ini dapat berubah sesuai kebutuhan dan rencana kuliah Anda. Segera hubungi bagian akademik Universitas Dian Nuswantoro jika Anda memiliki pertanyaan lebih lanjut.",
+    "timestamp": "2025-06-07T17:00:22.131393900"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal jaringan komputer",
+    "timestamp": "2025-06-07T17:00:39.470046300"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jadwal mata kuliah Jaringan Komputer adalah setiap hari Selasa, pukul 15.30-18.00 di ruang H.4.8.",
+    "timestamp": "2025-06-07T17:00:39.472113400"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-07T17:02:09.423190800"
+  },
+  {
+    "sender": "BOT",
+    "content": "Maaf, aku sudah coba cari kemana-mana tapi tetap tidak tahu jawabannya.",
+    "timestamp": "2025-06-07T17:02:09.433704"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-07T17:02:19.676522500"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo! Bagaimana kabarmu hari ini? Saya sih, asisten kampus virtual yang membantu menjawab pertanyaan seputar perkuliahan di Universitas Dian Nuswantoro. Jadi, apa yang kamu butuh bantuin?",
+    "timestamp": "2025-06-07T17:02:24.483514700"
   }
 ]

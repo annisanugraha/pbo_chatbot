@@ -13,16 +13,20 @@ import org.json.JSONObject;
 
 import chatbot.model.ChatMessage;
 import chatbot.processor.QuestionProcessor;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class ChatController {
 
@@ -34,6 +38,8 @@ public class ChatController {
     private Button sendButton;
     @FXML
     private ComboBox<String> modeComboBox;
+    @FXML
+    private MenuItem faqManagerMenuItem;
 
     // "Sumber kebenaran" untuk seluruh percakapan
     private final List<ChatMessage> conversation = new ArrayList<>();
@@ -189,6 +195,31 @@ public class ChatController {
             chatListView.getItems().setAll(conversation);
         } catch (Exception e) {
             System.err.println("Gagal memuat riwayat chat: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Metode ini akan dieksekusi saat menu "Manajemen FAQ" di-klik.
+     */
+    @FXML
+    private void handleFaqManagerMenu() {
+        try {
+            // 1. Muat file FXML untuk jendela admin yang sudah kita buat
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/chatbot/FaqManager.fxml"));
+            Parent root = loader.load();
+
+            // 2. Buat Stage (jendela) baru yang terpisah
+            Stage adminStage = new Stage();
+            adminStage.setTitle("Admin - Manajemen FAQ");
+            adminStage.setScene(new Scene(root));
+
+            // 3. Tampilkan jendela dan tunggu sampai jendela ini ditutup
+            // Ini akan mengunci jendela chat utama sampai jendela admin ditutup.
+            adminStage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Di aplikasi nyata, kita akan menampilkan dialog error di sini.
         }
     }
 }
