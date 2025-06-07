@@ -4,19 +4,30 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import chatbot.model.ChatMessage;
 import chatbot.processor.QuestionProcessor;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 
 public class ChatController {
 
     @FXML
-    private TextArea chatArea;
+    private ListView<ChatMessage> chatListView;
     @FXML
     private TextField inputField;
     @FXML
@@ -24,23 +35,77 @@ public class ChatController {
     @FXML
     private ComboBox<String> modeComboBox;
 
-    private final Path historyFile = Paths.get("chat-history.log");
+    // "Sumber kebenaran" untuk seluruh percakapan
+    private final List<ChatMessage> conversation = new ArrayList<>();
     
-    // Buat satu instance "manajer" kita
+    // Path untuk file history berformat JSON
+    private final Path historyFile = Paths.get("chat-history.json");
+    
+    // "Manajer" yang memproses pertanyaan
     private final QuestionProcessor processor = new QuestionProcessor();
 
+    /**
+     * Metode ini dijalankan secara otomatis oleh JavaFX setelah tampilan (FXML) selesai dimuat.
+     * Sangat cocok untuk melakukan setup awal.
+     */
     @FXML
     public void initialize() {
-        loadChatHistory();
+        setupChatListView(); // Menyiapkan bagaimana chat akan ditampilkan
+        loadChatHistory();   // Memuat riwayat chat dari file
 
-        // Mengisi pilihan mode ke dalam ComboBox
+        // Mengisi pilihan mode ke ComboBox
         modeComboBox.getItems().addAll("Mode Sederhana", "Mode Cerdas");
-        // Mengatur "Mode Sederhana" sebagai pilihan default saat aplikasi dibuka
-        modeComboBox.setValue("Mode Sederhana");
+        modeComboBox.setValue("Mode Sederhana"); // Mode default
 
-        chatArea.appendText("Bot: Halo! Selamat datang kembali.\n\n");
+        // Jika tidak ada riwayat, sapa pengguna
+        if (conversation.isEmpty()) {
+            addMessage(ChatMessage.Sender.BOT, "Halo! Ada yang bisa dibantu?");
+        }
     }
 
+    /**
+     * Metode ini mengatur "pabrik sel" untuk ListView.
+     * Ini mendefinisikan bagaimana setiap objek ChatMessage akan digambar menjadi gelembung chat.
+     */
+    private void setupChatListView() {
+        chatListView.setCellFactory(param -> new ListCell<ChatMessage>() {
+            private final Label messageBubble = new Label();
+            private final Label timestampLabel = new Label();
+            private final VBox container = new VBox(messageBubble, timestampLabel);
+
+            {
+                messageBubble.setWrapText(true); // Mengaktifkan bungkus teks
+                // Mengikat lebar maksimal bubble dengan 70% lebar listview
+                messageBubble.maxWidthProperty().bind(chatListView.widthProperty().multiply(0.70));
+            }
+
+            @Override
+            protected void updateItem(ChatMessage message, boolean empty) {
+                super.updateItem(message, empty);
+                if (empty || message == null) {
+                    setGraphic(null);
+                } else {
+                    messageBubble.setText(message.getContent());
+                    timestampLabel.setText(message.getFormattedTimestamp());
+                    timestampLabel.getStyleClass().add("timestamp-label");
+
+                    // Mengatur perataan dan gaya CSS berdasarkan pengirim
+                    if (message.getSender() == ChatMessage.Sender.USER) {
+                        messageBubble.getStyleClass().setAll("chat-bubble", "chat-bubble-user");
+                        container.setAlignment(Pos.CENTER_RIGHT);
+                    } else {
+                        messageBubble.getStyleClass().setAll("chat-bubble", "chat-bubble-bot");
+                        container.setAlignment(Pos.CENTER_LEFT);
+                    }
+                    setGraphic(container);
+                }
+            }
+        });
+    }
+
+    /**
+     * Metode ini dieksekusi setiap kali tombol "Kirim" ditekan.
+     */
     @FXML
     private void handleSendButtonAction() {
         String userQuestion = inputField.getText();
@@ -48,45 +113,81 @@ public class ChatController {
             return;
         }
 
-        // Tampilkan & simpan pesan user
-        String userMessage = "You: " + userQuestion + "\n";
-        chatArea.appendText(userMessage);
-        saveMessageToFile(userMessage);
-
-        // Baca mode yang sedang dipilih dari ComboBox
+        // 1. Tambahkan pesan pengguna ke percakapan
+        addMessage(ChatMessage.Sender.USER, userQuestion);
+        
+        // 2. Baca mode yang dipilih
         String selectedMode = modeComboBox.getValue();
+        
+        // 3. Proses pertanyaan untuk mendapatkan jawaban bot
+        String botAnswer = processor.process(userQuestion, selectedMode, conversation);
 
-        // Berikan pertanyaan DAN mode yang dipilih ke "manajer" kita (QuestionProcessor)
-        String botAnswer = processor.process(userQuestion, selectedMode);
-
-        // Tampilkan & simpan jawaban bot
-        String botMessage;
-        if (botAnswer != null && !botAnswer.isBlank()) {
-            botMessage = "Bot: " + botAnswer + "\n\n";
-        } else {
-            botMessage = "Bot: Maaf, aku sudah coba cari kemana-mana tapi tetap tidak tahu jawabannya.\n\n";
-        }
-        chatArea.appendText(botMessage);
-        saveMessageToFile(botMessage);
+        // 4. Tambahkan jawaban bot ke percakapan
+        String responseContent = (botAnswer != null && !botAnswer.isBlank()) ? 
+            botAnswer : "Maaf, aku sudah coba cari kemana-mana tapi tetap tidak tahu jawabannya.";
+        addMessage(ChatMessage.Sender.BOT, responseContent);
 
         inputField.clear();
     }
+    
+    /**
+     * Metode bantuan untuk menambahkan pesan baru ke list, lalu mengupdate tampilan dan history.
+     */
+    private void addMessage(ChatMessage.Sender sender, String content) {
+        ChatMessage message = new ChatMessage(sender, content);
+        conversation.add(message);
+        chatListView.getItems().add(message);
+        chatListView.scrollTo(conversation.size() - 1); // Otomatis scroll ke bawah
+        saveChatHistory();
+    }
 
-    private void saveMessageToFile(String message) {
+    /**
+     * Menyimpan seluruh list percakapan ke file chat-history.json.
+     * Metode ini menimpa (overwrite) file setiap kali dipanggil.
+     */
+    private void saveChatHistory() {
+        JSONArray jsonArray = new JSONArray();
+        for (ChatMessage message : conversation) {
+            JSONObject jsonMessage = new JSONObject();
+            jsonMessage.put("sender", message.getSender().toString());
+            jsonMessage.put("content", message.getContent());
+            jsonMessage.put("timestamp", message.getTimestamp().toString());
+            jsonArray.put(jsonMessage);
+        }
         try {
-            Files.writeString(historyFile, message, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+            Files.writeString(historyFile, jsonArray.toString(2)); // Angka 2 untuk format rapi
         } catch (IOException e) {
             System.err.println("Gagal menyimpan riwayat chat: " + e.getMessage());
         }
     }
 
+    /**
+     * Memuat riwayat percakapan dari file chat-history.json saat aplikasi pertama kali dibuka.
+     */
     private void loadChatHistory() {
+        if (!Files.exists(historyFile)) {
+            return;
+        }
         try {
-            if (Files.exists(historyFile)) {
-                String history = Files.readString(historyFile);
-                chatArea.setText(history);
+            String jsonText = Files.readString(historyFile);
+            JSONArray jsonArray = new JSONArray(jsonText);
+            
+            conversation.clear();
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonMessage = jsonArray.getJSONObject(i);
+                
+                ChatMessage.Sender sender = ChatMessage.Sender.valueOf(jsonMessage.getString("sender"));
+                String content = jsonMessage.getString("content");
+                
+                // PERBAIKAN: Membaca dan mengonversi timestamp dari file
+                String timestampStr = jsonMessage.getString("timestamp");
+                LocalDateTime timestamp = LocalDateTime.parse(timestampStr);
+                
+                // Menggunakan constructor baru untuk membuat ulang objek dengan timestamp aslinya
+                conversation.add(new ChatMessage(sender, content, timestamp));
             }
-        } catch (IOException e) {
+            chatListView.getItems().setAll(conversation);
+        } catch (Exception e) {
             System.err.println("Gagal memuat riwayat chat: " + e.getMessage());
         }
     }

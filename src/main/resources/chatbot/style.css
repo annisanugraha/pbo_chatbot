@@ -37,3 +37,54 @@
 .button:hover {
     -fx-background-color: #0056b3; /* Warna biru lebih gelap */
 }
+
+/* Menghilangkan border dan mengubah latar belakang default ListView */
+.chat-list-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+}
+
+.chat-list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+}
+
+/* Gaya dasar untuk semua gelembung chat */
+.chat-bubble {
+    -fx-padding: 8px 12px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-max-width: 70%; /* Lebar maksimal gelembung 70% dari lebar list */
+}
+
+.chat-bubble-user {
+    -fx-background-color: #007bff; /* Warna biru */
+    -fx-text-fill: white; /* Tulisan putih */
+}
+
+.chat-bubble-user .text {
+    -fx-fill: white; /* Tulisan putih */
+}
+
+.chat-bubble-bot {
+    -fx-background-color: #e9e9eb; /* Warna abu-abu */
+    -fx-text-fill: black; /* Tulisan hitam */
+}
+
+.chat-bubble-bot .text {
+    -fx-fill: black; /* Tulisan hitam */
+}
+
+/* Gaya untuk tulisan timestamp */
+.timestamp-label {
+    -fx-font-size: 10px;
+    -fx-text-fill: #888888;
+    -fx-padding: 4px 0 0 0;
+}
+
+/* / */
+
+/* Gaya spesifik untuk gelembung chat PENGGUNA (rata kanan) */
+
+
+/* Gaya spesifik untuk gelembung chat BOT (rata kiri) */

@@ -1,0 +1,172 @@
+[
+  {
+    "sender": "BOT",
+    "content": "Halo! Selamat datang kembali.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo! Saya adalah asisten kampus virtual Universitas Dian Nuswantoro. Bagaimana saya dapat membantu Anda hari ini?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "pbo itu kapan ya jadwalnya?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Mata kuliah Pemrograman Berorientasi Objek (PBO) memiliki dua jadwal: hari Rabu pukul 10.20-12.00 di ruang H.5.11, dan hari Jumat pukul 12.30-14.10 di ruang D.2.K.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "kalau jarkom kapan?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jarkom atau 'Jadwal Akademik dan Kegiatan Mahasiswa' biasanya disampaikan langsung oleh Panitia Akademik diUniversitas Dian Nuswantoro, mungkin pada saat pembukaan perkuliahan maupun saat pendaftaran ulang tahunan. Jangan lupa untuk memeriksa informasi lebih lanjut pada website resmi universitas atau konfirmasi langsung dengan Panitia Akademik.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "maksudku jaringan komputer",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Gagal memahami format respons dari AI.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "rektor udinus siapa?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Rektor Universitas Dian Nuswantoro saat ini adalah Prof. Dr. Pulung Nurtantio Andono, S.T., M.Kom.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "baiklah terimaksih",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Gagal memahami format respons dari AI.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "terimakasih",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Gagal memahami format respons dari AI.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo! Selamat datang kembali.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Saya lupa untuk menjawab pertanyaan sebelumnya. Untuk informasi jadwal perkuliahan di Universitas Dian Nuswantoro, silakan hubungi bagian akademik melalui email, telpon, atau kunjungi website resmi universitas. Saya akan tetap memberikan informasi seputar perkuliahan dengan segara.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "aku ada jadwal nggak hari rabu?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jadwal kuliah pada hari Rabu berbeda untuk setiap program studi dan semester yang berbeda. Untuk mengetahui jadwal kuliahmu, silakan login ke AKUN MU (Sistem Informasi Akademis) di website UNIVERSITAS DIAN NUSWANTORO. Atau, hubungi Dosen Pengampu (DPA) mata kuliahmu untuk mengonfirmasi jadwal. Selamat belajar!",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal pbo",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Mata kuliah Pemrograman Berorientasi Objek (PBO) memiliki dua jadwal: hari Rabu pukul 10.20-12.00 di ruang H.5.11, dan hari Jumat pukul 12.30-14.10 di ruang D.2.K.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "lah itu ada di hari rabu, ada pbo di hari rabu",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Maaf, tidak mengerti apa yang Anda maksud. Jadi, apakah Anda memiliki pertanyaan yang lebih khusus tentang Universitas Dian Nuswantoro?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "udahlah makasihh",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Selesai. Jangan lupa untuk mengunjungi kembali sistem informasi perkuliahan jika ada pertanyaan baru. Semoga kegiatan belajar anda tetap menyenangkan dan bermanfaat.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "dosen PBO siapa?",
+    "timestamp": "2025-06-07T13:26:37.554667500"
+  },
+  {
+    "sender": "BOT",
+    "content": "Dosen mata kuliah Pemrograman Berorientasi Objek (PBO) adalah DANNY OKA RATMANA M.Kom.",
+    "timestamp": "2025-06-07T13:26:37.560282500"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-07T13:38:08.185232400"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo! Saya adalah asisten kampus virtual yang disini untuk membantu menjawab pertanyaan seputar perkuliahan di Universitas Dian Nuswantoro. Apa yang dapat saya lakukan untuk Anda hari ini?",
+    "timestamp": "2025-06-07T13:38:12.721451100"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal jarkom",
+    "timestamp": "2025-06-07T13:49:36.672028400"
+  },
+  {
+    "sender": "BOT",
+    "content": "Maaf, aku sudah coba cari kemana-mana tapi tetap tidak tahu jawabannya.",
+    "timestamp": "2025-06-07T13:49:36.679033500"
+  },
+  {
+    "sender": "USER",
+    "content": "rektor udinus",
+    "timestamp": "2025-06-07T13:49:45.259769100"
+  },
+  {
+    "sender": "BOT",
+    "content": "Rektor Universitas Dian Nuswantoro saat ini adalah Prof. Dr. Pulung Nurtantio Andono, S.T., M.Kom.",
+    "timestamp": "2025-06-07T13:49:45.264329800"
+  }
+]
