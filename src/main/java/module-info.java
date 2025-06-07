@@ -1,9 +1,13 @@
 module chatbot {
+    // Izin yang sudah ada
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.net.http;
 
-    opens chatbot to javafx.fxml;
+    // ===== TAMBAHKAN IZIN BARU DI SINI =====
+    requires org.json;
+
+    // Bagian ini biarkan saja seperti semula
     opens chatbot.controller to javafx.fxml;
     exports chatbot;
-    exports chatbot.controller to javafx.fxml;
 }

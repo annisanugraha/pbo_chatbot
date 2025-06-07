@@ -1,32 +1,39 @@
-.fx-main-color {
-    -fx-background-color: #111111; /* black main color */
+/* Memberi warna latar belakang utama yang lembut */
+.root-pane {
+    -fx-background-color: #f4f4f8; /* Warna abu-abu kebiruan muda */
 }
 
-.fx-sidebar-color{
-    -fx-background-color: #1e1e1e; /* Dark gray sidebar color */
+/* Mengatur tampilan area chat */
+.chat-area {
+    -fx-control-inner-background: #ffffff; /* Warna dalam area chat (putih) */
+    -fx-font-size: 14px;
+    -fx-border-color: #e0e0e0;
 }
 
-.rounded-textfield {
-    -fx-background-color: #FFFFFF;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
-    -fx-border-color: #ababab; /* contoh warna border */
-    -fx-border-width: 1px;
+/* Mengatur tulisan di dalam area chat */
+.chat-area .text {
+    -fx-fill: #333333; /* Warna tulisan */
 }
 
-.macos-style-search-bar-dark {
-    -fx-background-color: #3A3A3C;
-    -fx-background-radius: 8;
-    -fx-border-color: #505053; /* Atau bisa juga tanpa border eksplisit */
-    -fx-border-radius: 8;
-    -fx-border-width: 1px; /* Atau 0px jika tidak ingin border */
-    -fx-font-family: "San Francisco Display", "Helvetica Neue", Arial, sans-serif;
-    -fx-prompt-text-fill: #8E8E93;
-    -fx-text-fill: #FFFFFF;
-    -fx-padding: 5px 10px;
+/* Mengatur tampilan kolom input */
+.text-field {
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 20px; /* Membuat sudutnya sangat melengkung (pil) */
+    -fx-background-radius: 20px;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #b0b0b0; /* Warna tulisan "Ketik pertanyaanmu..." */
 }
 
-.macos-style-search-bar-dark:focused {
-    -fx-border-color: #0A84FF;
-    /* -fx-effect: dropshadow(gaussian, rgba(10, 132, 255, 0.6), 5, 0, 0, 0); */
+/* Mengatur tampilan tombol */
+.button {
+    -fx-background-color: #007bff; /* Warna utama tombol (biru) */
+    -fx-text-fill: white; /* Warna tulisan di tombol */
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px; /* Sudut melengkung agar serasi */
+    -fx-cursor: hand; /* Mengubah kursor jadi gambar tangan saat di atas tombol */
+}
+
+/* Mengatur tampilan tombol saat mouse berada di atasnya */
+.button:hover {
+    -fx-background-color: #0056b3; /* Warna biru lebih gelap */
 }
