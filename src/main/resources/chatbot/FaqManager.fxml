@@ -34,7 +34,6 @@
             <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAdd" text="Tambah Baru" />
             <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEdit" text="Edit Pilihan" />
             <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" text="Hapus Pilihan" />
-            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSaveAndClose" text="Simpan &amp; Tutup" />
          </children>
       </HBox>
    </bottom>

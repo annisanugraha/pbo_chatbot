@@ -268,5 +268,45 @@
     "sender": "BOT",
     "content": "Halo! Bagaimana kabarmu hari ini? Saya sih, asisten kampus virtual yang membantu menjawab pertanyaan seputar perkuliahan di Universitas Dian Nuswantoro. Jadi, apa yang kamu butuh bantuin?",
     "timestamp": "2025-06-07T17:02:24.483514700"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-09T23:00:19.567734900"
+  },
+  {
+    "sender": "BOT",
+    "content": "Maaf, aku sudah coba cari kemana-mana tapi tetap tidak tahu jawabannya.",
+    "timestamp": "2025-06-09T23:00:19.587632400"
+  },
+  {
+    "sender": "USER",
+    "content": "halo",
+    "timestamp": "2025-06-09T23:00:44.226697500"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo! Saya adalah asisten kampus virtual yang disini untuk membantu menjawab pertanyaan seputar perkuliahan di Universitas Dian Nuswantoro. Ada yang perlu saya bantu?",
+    "timestamp": "2025-06-09T23:00:48.817400300"
+  },
+  {
+    "sender": "USER",
+    "content": "info perpus",
+    "timestamp": "2025-06-09T23:00:57.764956200"
+  },
+  {
+    "sender": "BOT",
+    "content": "di gedung B",
+    "timestamp": "2025-06-09T23:00:57.770800100"
+  },
+  {
+    "sender": "USER",
+    "content": "ak mau ambil krs",
+    "timestamp": "2025-06-09T23:45:51.954929100"
+  },
+  {
+    "sender": "BOT",
+    "content": "KRS diisi secara online melalui portal Siadin. Panduan lengkapnya terdapat di menu Akademik > Input-Edit KRS.",
+    "timestamp": "2025-06-09T23:45:51.975998900"
   }
 ]
