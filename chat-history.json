@@ -308,5 +308,15 @@
     "sender": "BOT",
     "content": "KRS diisi secara online melalui portal Siadin. Panduan lengkapnya terdapat di menu Akademik > Input-Edit KRS.",
     "timestamp": "2025-06-09T23:45:51.975998900"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-11T08:13:17.288618600"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo. Bagaimana harinya? Jadi asisten kampus virtual yang membantu menjawab pertanyaan seputar perkuliahan di Universitas Dian Nuswantoro. Silakan tanyajikan apa yang kamu inginkan.",
+    "timestamp": "2025-06-11T08:13:22.115228200"
   }
 ]

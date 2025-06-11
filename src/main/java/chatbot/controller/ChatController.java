@@ -41,19 +41,16 @@
         @FXML
         private MenuItem faqManagerMenuItem;
 
-        // "Sumber kebenaran" untuk seluruh percakapan
+        // Daftar untuk menyimpan seluruh percakapan
         private final List<ChatMessage> conversation = new ArrayList<>();
         
-        // Path untuk file history berformat JSON
+        // File untuk menyimpan riwayat chat
         private final Path historyFile = Paths.get("chat-history.json");
         
-        // "Manajer" yang memproses pertanyaan
+        // Objek untuk memproses pertanyaan
         private final QuestionProcessor processor = new QuestionProcessor();
 
-        /**
-         * Metode ini dijalankan secara otomatis oleh JavaFX setelah tampilan (FXML) selesai dimuat.
-         * Sangat cocok untuk melakukan setup awal.
-         */
+        // Inisialisasi controller, ini akan dipanggil saat FXML dimuat
         @FXML
         public void initialize() {
             setupChatListView(); 
@@ -65,28 +62,21 @@
             if (conversation.isEmpty()) {
                 addMessage(ChatMessage.Sender.BOT, "Halo! Ada yang bisa dibantu?");
             }
-
-            // ➔ Tambahkan ini untuk mendukung ENTER
             inputField.setOnAction(event -> handleSendButtonAction());
         }
 
-
-        /**
-         * Metode ini mengatur "pabrik sel" untuk ListView.
-         * Ini mendefinisikan bagaimana setiap objek ChatMessage akan digambar menjadi gelembung chat.
-         */
+        // Metode untuk mengatur tampilan ListView chat
         private void setupChatListView() {
             chatListView.setCellFactory(param -> new ListCell<ChatMessage>() {
                 private final Label messageBubble = new Label();
                 private final Label timestampLabel = new Label();
                 private final VBox container = new VBox(messageBubble, timestampLabel);
-
                 {
-                    messageBubble.setWrapText(true); // Mengaktifkan bungkus teks
-                    // Mengikat lebar maksimal bubble dengan 70% lebar listview
+                    messageBubble.setWrapText(true);
                     messageBubble.maxWidthProperty().bind(chatListView.widthProperty().multiply(0.70));
                 }
 
+                // Override metode updateItem untuk mengatur tampilan setiap item
                 @Override
                 protected void updateItem(ChatMessage message, boolean empty) {
                     super.updateItem(message, empty);
@@ -97,7 +87,7 @@
                         timestampLabel.setText(message.getFormattedTimestamp());
                         timestampLabel.getStyleClass().add("timestamp-label");
 
-                        // Mengatur perataan dan gaya CSS berdasarkan pengirim
+                        // Atur gaya dan posisi bubble pesan berdasarkan pengirim
                         if (message.getSender() == ChatMessage.Sender.USER) {
                             messageBubble.getStyleClass().setAll("chat-bubble", "chat-bubble-user");
                             container.setAlignment(Pos.CENTER_RIGHT);
@@ -111,9 +101,7 @@
             });
         }
 
-        /**
-         * Metode ini dieksekusi setiap kali tombol "Kirim" ditekan.
-         */
+        // Metode untuk menangani aksi tombol kirim
         @FXML
         private void handleSendButtonAction() {
             String userQuestion = inputField.getText();
@@ -138,21 +126,16 @@
             inputField.clear();
         }
         
-        /**
-         * Metode bantuan untuk menambahkan pesan baru ke list, lalu mengupdate tampilan dan history.
-         */
+        // Metode untuk menambahkan pesan ke dalam percakapan dan memperbarui tampilan ListView
         private void addMessage(ChatMessage.Sender sender, String content) {
             ChatMessage message = new ChatMessage(sender, content);
             conversation.add(message);
             chatListView.getItems().add(message);
-            chatListView.scrollTo(conversation.size() - 1); // Otomatis scroll ke bawah
+            chatListView.scrollTo(conversation.size() - 1);
             saveChatHistory();
         }
 
-        /**
-         * Menyimpan seluruh list percakapan ke file chat-history.json.
-         * Metode ini menimpa (overwrite) file setiap kali dipanggil.
-         */
+        // Metode untuk menyimpan riwayat chat ke file chat-history.json
         private void saveChatHistory() {
             JSONArray jsonArray = new JSONArray();
             for (ChatMessage message : conversation) {
@@ -163,15 +146,13 @@
                 jsonArray.put(jsonMessage);
             }
             try {
-                Files.writeString(historyFile, jsonArray.toString(2)); // Angka 2 untuk format rapi
+                Files.writeString(historyFile, jsonArray.toString(2));
             } catch (IOException e) {
                 System.err.println("Gagal menyimpan riwayat chat: " + e.getMessage());
             }
         }
 
-        /**
-         * Memuat riwayat percakapan dari file chat-history.json saat aplikasi pertama kali dibuka.
-         */
+        // Metode untuk memuat riwayat chat dari file chat-history.json
         private void loadChatHistory() {
             if (!Files.exists(historyFile)) {
                 return;
@@ -187,11 +168,9 @@
                     ChatMessage.Sender sender = ChatMessage.Sender.valueOf(jsonMessage.getString("sender"));
                     String content = jsonMessage.getString("content");
                     
-                    // PERBAIKAN: Membaca dan mengonversi timestamp dari file
                     String timestampStr = jsonMessage.getString("timestamp");
                     LocalDateTime timestamp = LocalDateTime.parse(timestampStr);
                     
-                    // Menggunakan constructor baru untuk membuat ulang objek dengan timestamp aslinya
                     conversation.add(new ChatMessage(sender, content, timestamp));
                 }
                 chatListView.getItems().setAll(conversation);
@@ -200,9 +179,7 @@
             }
         }
 
-        /**
-         * Metode ini akan dieksekusi saat menu "Manajemen FAQ" di-klik.
-         */
+        // Metode untuk menangani klik pada menu FAQ Manager
         @FXML
         private void handleFaqManagerMenu() {
             try {
@@ -215,13 +192,11 @@
                 adminStage.setTitle("Admin - Manajemen FAQ");
                 adminStage.setScene(new Scene(root));
 
-                // 3. Tampilkan jendela dan tunggu sampai jendela ini ditutup
-                // Ini akan mengunci jendela chat utama sampai jendela admin ditutup.
+                // 3. Ambil controller dari FXML yang sudah dimuat
                 adminStage.showAndWait();
 
             } catch (IOException e) {
                 e.printStackTrace();
-                // Di aplikasi nyata, kita akan menampilkan dialog error di sini.
             }
         }
     }

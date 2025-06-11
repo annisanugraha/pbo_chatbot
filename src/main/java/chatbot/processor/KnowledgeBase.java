@@ -15,12 +15,12 @@ public class KnowledgeBase {
     private static final Path FAQ_FILE_PATH = Paths.get("faq.json");
     private static final Map<String, String> faq = new TreeMap<>();
 
-    // Blok static sekarang tugasnya hanya memanggil metode untuk memuat data
+    // Inisialisasi statis untuk memuat data dari file saat kelas dimuat
     static {
         loadFaqFromFile();
     }
 
-    // Metode untuk memuat data dari faq.json
+    // Metode statis untuk mendapatkan instance Map FAQ
     private static void loadFaqFromFile() {
         // Jika file ada, baca isinya
         if (Files.exists(FAQ_FILE_PATH)) {
@@ -40,34 +40,34 @@ public class KnowledgeBase {
                 System.err.println("Gagal membaca file faq.json: " + e.getMessage());
             }
         } else {
-            // Jika file tidak ada, kita bisa mulai dengan map kosong
-            // atau membuat file default. Untuk sekarang, mulai kosong saja.
+            // Jika file tidak ada, print map kosong
             System.out.println("File faq.json tidak ditemukan. KnowledgeBase kosong.");
         }
     }
 
-    // Metode BARU untuk menyimpan perubahan kembali ke file faq.json
+    // Metode statis untuk menyimpan data ke file
     public static void saveFaqToFile() {
         JSONObject jsonObject = new JSONObject(faq);
         try {
-            // Tulis ulang seluruh file dengan data terbaru dari Map
-            Files.writeString(FAQ_FILE_PATH, jsonObject.toString(2)); // Angka 2 untuk format rapi
+            // Tulis JSON ke file faq.json
+            Files.writeString(FAQ_FILE_PATH, jsonObject.toString(2));
             System.out.println("KnowledgeBase berhasil disimpan ke faq.json");
         } catch (IOException e) {
             System.err.println("Gagal menyimpan ke file faq.json: " + e.getMessage());
         }
     }
 
-    // Metode ini tetap sama, untuk digunakan oleh RuleBasedStrategy
+    // Metode untuk mendapatkan data FAQ sebagai Map
     public static Map<String, String> getFaqData() {
         return faq;
     }
     
-    // Metode BARU untuk fitur admin nanti
+    // Metode untuk mendapatkan jawaban berdasarkan kunci
     public static void addOrUpdateFaq(String key, String value) {
         faq.put(key.toLowerCase(), value);
     }
-    
+
+    // Metode untuk menghapus FAQ berdasarkan kunci
     public static void removeFaq(String key) {
         faq.remove(key.toLowerCase());
     }

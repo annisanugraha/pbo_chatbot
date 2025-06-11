@@ -39,16 +39,15 @@ public class FaqManagerController {
 
     private ObservableList<FaqItem> faqList;
 
+    // Inisialisasi controller, akan dipanggil saat FXML dimuat
     @FXML
     public void initialize() {
-        // Mengatur bagaimana kolom menampilkan data
         keyColumn.setCellValueFactory(cellData -> cellData.getValue().keyProperty());
         valueColumn.setCellValueFactory(cellData -> cellData.getValue().valueProperty());
-
-        // Memuat data awal ke tabel
         loadFaqData();
     }
 
+    // Memuat data FAQ dari KnowledgeBase dan menampilkannya di TableView
     private void loadFaqData() {
         this.faqList = FXCollections.observableArrayList();
         KnowledgeBase.getFaqData().forEach((key, value) -> {
@@ -57,26 +56,24 @@ public class FaqManagerController {
         faqTableView.setItems(faqList);
     }
 
-    // Di dalam FaqManagerController.java
-
+    // Metode untuk menangani penambahan FAQ baru
     @FXML
     private void handleAdd() {
-        // 1. Membuat dialog custom, sama persis seperti di handleEdit
+        // Membuat dialog custom baru yang akan mengembalikan sepasang String
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Tambah FAQ Baru");
         dialog.setHeaderText("Masukkan Kata Kunci dan Jawaban baru di bawah ini.");
 
-        // 2. Menyiapkan tombol OK dan Cancel
+        // Tombol OK dan Cancel untuk dialog
         ButtonType okButtonType = new ButtonType("OK", ButtonType.OK.getButtonData());
         dialog.getDialogPane().getButtonTypes().addAll(okButtonType, ButtonType.CANCEL);
 
-        // 3. Membuat layout grid untuk menata label dan kolom input
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
         grid.setPadding(new Insets(20, 150, 10, 10));
 
-        // Perbedaan utama: Kolom inputnya kita buat KOSONG
+        // Membuat kolom input untuk kata kunci dan jawaban
         TextField keyField = new TextField();
         keyField.setPromptText("Kata Kunci (cth: jadwal metopen)");
         TextArea valueArea = new TextArea();
@@ -88,20 +85,18 @@ public class FaqManagerController {
         grid.add(new Label("Jawaban:"), 0, 1);
         grid.add(valueArea, 1, 1);
 
-        // 4. Menaruh layout grid ke dalam dialog
         dialog.getDialogPane().setContent(grid);
 
-        // 5. Mengatur agar tombol OK tidak bisa ditekan jika kolom kata kunci kosong
+        // Mengatur agar tombol OK tidak bisa ditekan jika kolom kata kunci kosong
         Node okButton = dialog.getDialogPane().lookupButton(okButtonType);
         okButton.setDisable(true);
         keyField.textProperty().addListener((observable, oldValue, newValue) -> {
             okButton.setDisable(newValue.trim().isEmpty());
         });
 
-        // Meminta fokus pada kolom pertama saat dialog dibuka
         Platform.runLater(keyField::requestFocus);
 
-        // 6. Mengonversi hasil input menjadi sepasang key-value (logikanya sama seperti handleEdit)
+        // Mengonversi hasil input menjadi sebuah pasangan key-value saat OK ditekan
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == okButtonType) {
                 return new Pair<>(keyField.getText(), valueArea.getText());
@@ -109,40 +104,42 @@ public class FaqManagerController {
             return null;
         });
 
-        // 7. Menampilkan dialog dan memproses hasilnya
+        // Menampilkan dialog dan memproses hasilnya jika user menekan OK
         Optional<Pair<String, String>> result = dialog.showAndWait();
 
+        // Jika hasilnya ada, tambahkan ke KnowledgeBase dan simpan ke file
         result.ifPresent(pair -> {
-            // Logikanya lebih sederhana, hanya menambah, tidak perlu hapus data lama
             KnowledgeBase.addOrUpdateFaq(pair.getKey(), pair.getValue());
             KnowledgeBase.saveFaqToFile();
             loadFaqData(); // Refresh tabel
         });
     }
 
+    // Metode untuk menangani pengeditan FAQ yang sudah ada
     @FXML
     private void handleEdit() {
+        // Memastikan ada item yang dipilih sebelum mengedit
         FaqItem selectedItem = faqTableView.getSelectionModel().getSelectedItem();
         if (selectedItem == null) {
             showAlert("Peringatan", "Tidak ada item yang dipilih untuk diedit.");
             return;
         }
 
-        // 1. Membuat dialog custom baru yang akan mengembalikan sepasang String
+        // Membuat dialog untuk mengedit FAQ yang sudah ada
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Edit FAQ");
         dialog.setHeaderText("Anda dapat mengedit Kata Kunci dan Jawaban di sini.");
 
-        // 2. Menyiapkan tombol OK dan Cancel untuk dialog
+        // Tombol OK dan Cancel untuk dialog
         ButtonType okButtonType = new ButtonType("OK", ButtonType.OK.getButtonData());
         dialog.getDialogPane().getButtonTypes().addAll(okButtonType, ButtonType.CANCEL);
 
-        // 3. Membuat layout grid untuk menata label dan kolom input
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
         grid.setPadding(new Insets(20, 150, 10, 10));
 
+        // Membuat kolom input untuk kata kunci dan jawaban, diisi dengan data yang sudah ada
         TextField keyField = new TextField(selectedItem.getKey());
         keyField.setPromptText("Kata Kunci");
         TextArea valueArea = new TextArea(selectedItem.getValue());
@@ -154,10 +151,9 @@ public class FaqManagerController {
         grid.add(new Label("Jawaban:"), 0, 1);
         grid.add(valueArea, 1, 1);
 
-        // 4. Menaruh layout grid ke dalam panel konten dialog
         dialog.getDialogPane().setContent(grid);
         
-        // 5. Mengatur agar tombol OK tidak bisa ditekan jika kolom kata kunci kosong
+        // Mengatur agar tombol OK tidak bisa ditekan jika kolom kata kunci kosong
         Node okButton = dialog.getDialogPane().lookupButton(okButtonType);
         okButton.setDisable(false); // Awalnya bisa ditekan
         keyField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -167,7 +163,7 @@ public class FaqManagerController {
         // Meminta fokus pada kolom pertama saat dialog dibuka
         Platform.runLater(keyField::requestFocus);
 
-        // 6. Mengonversi hasil input menjadi sebuah "Pair" (pasangan) key-value saat OK ditekan
+        // Mengonversi hasil input menjadi sebuah pasangan key-value saat OK ditekan
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == okButtonType) {
                 return new Pair<>(keyField.getText(), valueArea.getText());
@@ -175,14 +171,14 @@ public class FaqManagerController {
             return null;
         });
 
-        // 7. Menampilkan dialog dan memproses hasilnya jika user menekan OK
+        // Menampilkan dialog dan memproses hasilnya jika user menekan OK
         Optional<Pair<String, String>> result = dialog.showAndWait();
 
         result.ifPresent(pair -> {
             String newKey = pair.getKey();
             String newValue = pair.getValue();
 
-            // Karena key bisa berubah, cara teraman adalah hapus data lama dan tambahkan data baru
+            // Karena key bisa berubah, hapus data lama dan tambahkan data baru
             KnowledgeBase.removeFaq(selectedItem.getKey());
             KnowledgeBase.addOrUpdateFaq(newKey, newValue);
             
@@ -192,19 +188,23 @@ public class FaqManagerController {
         });
     }
 
+    // Metode untuk menangani penghapusan FAQ yang sudah ada
     @FXML
     private void handleDelete() {
+        // Memastikan ada item yang dipilih sebelum menghapus
         FaqItem selectedItem = faqTableView.getSelectionModel().getSelectedItem();
         if (selectedItem == null) {
             showAlert("Peringatan", "Tidak ada item yang dipilih untuk dihapus.");
             return;
         }
 
+        // Menampilkan dialog konfirmasi sebelum menghapus
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         confirmAlert.setTitle("Konfirmasi Hapus");
         confirmAlert.setHeaderText("Anda yakin ingin menghapus FAQ ini?");
         confirmAlert.setContentText("Kata Kunci: " + selectedItem.getKey());
 
+        // Tombol OK dan Cancel
         Optional<ButtonType> result = confirmAlert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             KnowledgeBase.removeFaq(selectedItem.getKey());
@@ -213,8 +213,11 @@ public class FaqManagerController {
         }
     }
 
+    // Menampilkan alert
     private void showAlert(String title, String message) {
+        // Membuat alert dengan tipe sesuai judul
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        // Jika judulnya "Peringatan", tipe alert menjadi WARNING
         if (title.equals("Peringatan")) {
             alert.setAlertType(Alert.AlertType.WARNING);
         }
@@ -224,11 +227,12 @@ public class FaqManagerController {
         alert.showAndWait();
     }
 
-    // Inner Class untuk FaqItem
+    // Kelas FaqItem untuk menyimpan data FAQ
     public static class FaqItem {
         private final SimpleStringProperty key;
         private final SimpleStringProperty value;
 
+        // Konstruktor untuk membuat item FAQ baru
         public FaqItem(String key, String value) {
             this.key = new SimpleStringProperty(key);
             this.value = new SimpleStringProperty(value);
