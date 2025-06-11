@@ -23,7 +23,7 @@ public class QuestionProcessor {
     public String process(String question, String mode, List<ChatMessage> conversation) {
         String answer;
 
-        if ("Mode Cerdas".equals(mode)) {
+        if ("Mode API".equals(mode)) {
             answer = this.ruleBased.getAnswer(question);
             if (answer == null) {
                 // Ubah list percakapan menjadi JSON Array

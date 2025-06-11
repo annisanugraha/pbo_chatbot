@@ -59,8 +59,8 @@
             setupChatListView(); 
             loadChatHistory();   
 
-            modeComboBox.getItems().addAll("Mode Sederhana", "Mode Cerdas");
-            modeComboBox.setValue("Mode Sederhana");
+            modeComboBox.getItems().addAll("Mode Rule", "Mode API");
+            modeComboBox.setValue("Mode Rule");
 
             if (conversation.isEmpty()) {
                 addMessage(ChatMessage.Sender.BOT, "Halo! Ada yang bisa dibantu?");

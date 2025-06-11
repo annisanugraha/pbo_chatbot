@@ -10,28 +10,27 @@ public class ChatMessage implements Serializable {
         USER, BOT
     }
 
-    private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");
+    private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     private final Sender sender;
     private final String content;
     private final LocalDateTime timestamp;
 
-    // Constructor #1: Ini untuk membuat pesan BARU. Timestamp dibuat otomatis.
+    // Constructor untuk pesan baru
     public ChatMessage(Sender sender, String content) {
         this.sender = sender;
         this.content = content;
         this.timestamp = LocalDateTime.now(); 
     }
 
-    // ===== CONSTRUCTOR BARU #2: Ini untuk me-load pesan LAMA dari history =====
-    // Constructor ini menerima timestamp secara spesifik dari data yang kita baca.
+    // Constructor untuk meload history chat
     public ChatMessage(Sender sender, String content, LocalDateTime timestamp) {
         this.sender = sender;
         this.content = content;
         this.timestamp = timestamp;
     }
 
-    // --- Getter methods ---
+
     public Sender getSender() {
         return sender;
     }

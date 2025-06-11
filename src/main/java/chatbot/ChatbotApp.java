@@ -13,7 +13,7 @@ public class ChatbotApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        // Cara baru yang lebih aman untuk mendapatkan path ke file FXML
+        // Akses fxml
         URL fxmlLocation = getClass().getResource("/chatbot/gui.fxml");
 
         // Pengecekan penting: jika alamatnya tidak ditemukan, hentikan program dengan pesan jelas

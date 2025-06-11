@@ -4,16 +4,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.json.JSONObject;
 
 public class KnowledgeBase {
 
     private static final Path FAQ_FILE_PATH = Paths.get("faq.json");
-    private static final Map<String, String> faq = new HashMap<>();
+    private static final Map<String, String> faq = new TreeMap<>();
 
     // Blok static sekarang tugasnya hanya memanggil metode untuk memuat data
     static {
