@@ -23,7 +23,6 @@
     import javafx.scene.control.Label;
     import javafx.scene.control.ListCell;
     import javafx.scene.control.ListView;
-    import javafx.scene.control.MenuItem;
     import javafx.scene.control.TextField;
     import javafx.scene.layout.VBox;
     import javafx.stage.Stage;
@@ -38,8 +37,6 @@
         private Button sendButton;
         @FXML
         private ComboBox<String> modeComboBox;
-        @FXML
-        private MenuItem faqManagerMenuItem;
 
         // Daftar untuk menyimpan seluruh percakapan
         private final List<ChatMessage> conversation = new ArrayList<>();
@@ -63,6 +60,7 @@
                 addMessage(ChatMessage.Sender.BOT, "Halo! Ada yang bisa dibantu?");
             }
             inputField.setOnAction(event -> handleSendButtonAction());
+            sendButton.setOnAction(event -> handleSendButtonAction());
         }
 
         // Metode untuk mengatur tampilan ListView chat
@@ -174,13 +172,14 @@
                     conversation.add(new ChatMessage(sender, content, timestamp));
                 }
                 chatListView.getItems().setAll(conversation);
-            } catch (Exception e) {
+            } catch (IOException | org.json.JSONException e) {
                 System.err.println("Gagal memuat riwayat chat: " + e.getMessage());
             }
         }
 
         // Metode untuk menangani klik pada menu FAQ Manager
         @FXML
+        @SuppressWarnings("CallToPrintStackTrace")
         private void handleFaqManagerMenu() {
             try {
                 // 1. Muat file FXML untuk jendela admin yang sudah kita buat

@@ -318,5 +318,75 @@
     "sender": "BOT",
     "content": "Halo. Bagaimana harinya? Jadi asisten kampus virtual yang membantu menjawab pertanyaan seputar perkuliahan di Universitas Dian Nuswantoro. Silakan tanyajikan apa yang kamu inginkan.",
     "timestamp": "2025-06-11T08:13:22.115228200"
+  },
+  {
+    "sender": "USER",
+    "content": "hi hello",
+    "timestamp": "2025-06-11T08:40:45.490389600"
+  },
+  {
+    "sender": "BOT",
+    "content": "Maaf, aku sudah coba cari kemana-mana tapi tetap tidak tahu jawabannya.",
+    "timestamp": "2025-06-11T08:40:45.498401400"
+  },
+  {
+    "sender": "USER",
+    "content": "hi hello",
+    "timestamp": "2025-06-11T08:40:51.784377100"
+  },
+  {
+    "sender": "BOT",
+    "content": "Hi! Bagaimana harinya?",
+    "timestamp": "2025-06-11T08:40:53.511677600"
+  },
+  {
+    "sender": "USER",
+    "content": "aku mau tanya seputar krs",
+    "timestamp": "2025-06-11T08:41:03.689928"
+  },
+  {
+    "sender": "BOT",
+    "content": "KRS diisi secara online melalui portal Siadin. Panduan lengkapnya terdapat di menu Akademik > Input-Edit KRS.",
+    "timestamp": "2025-06-11T08:41:03.692940400"
+  },
+  {
+    "sender": "USER",
+    "content": "perpus berbayar nggak?",
+    "timestamp": "2025-06-11T08:55:05.164485100"
+  },
+  {
+    "sender": "BOT",
+    "content": "Di gedung B",
+    "timestamp": "2025-06-11T08:55:05.176526"
+  },
+  {
+    "sender": "USER",
+    "content": "perpus berbayar nggak?",
+    "timestamp": "2025-06-11T09:05:14.317782100"
+  },
+  {
+    "sender": "BOT",
+    "content": "Perpustakaan di Universitas Dian Nuswantoro memiliki koleksi yang luas, termasuk perpustakaan digital. Namun, akses ke beberapa sumber mungkin memerlukan biaya tambahan. Untuk informasi lebih lanjut, silakan hubungi bagian perpustakaan di Gedung B.",
+    "timestamp": "2025-06-11T09:05:20.585834900"
+  },
+  {
+    "sender": "USER",
+    "content": "siapa dosen-dosen udinus?",
+    "timestamp": "2025-06-11T09:05:43.763432900"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jawapanku: Dosen Undinus berasal dari berbagai bidang dan memiliki latar belakang pendidikan yang berbeda. Untuk informasi lebih detail tentang daftar dosen Undinus, silakan hubungi bagian Humas di Gedung A.",
+    "timestamp": "2025-06-11T09:05:48.367318300"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwalku hari senin apa?",
+    "timestamp": "2025-06-11T09:06:13.555237"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jadwal pada hari Senin adalah: 12.30-15.00 Rangkaian Logika Digital di H.5.4, dan 15.30-17.10 Pemrograman Web Lanjut di H.6.1.",
+    "timestamp": "2025-06-11T09:06:17.714036900"
   }
 ]

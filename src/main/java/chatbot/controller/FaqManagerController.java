@@ -11,7 +11,6 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
@@ -30,12 +29,6 @@ public class FaqManagerController {
     private TableColumn<FaqItem, String> keyColumn;
     @FXML
     private TableColumn<FaqItem, String> valueColumn;
-    @FXML
-    private Button addButton;
-    @FXML
-    private Button editButton;
-    @FXML
-    private Button deleteButton;
 
     private ObservableList<FaqItem> faqList;
 
