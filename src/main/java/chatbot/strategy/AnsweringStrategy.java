@@ -1,5 +1,7 @@
 package chatbot.strategy;
 
-public class AnsweringStrategy {
-    //Metode: String getAnswer(String question)
+// Interface untuk strategi menjawab pertanyaan
+public interface AnsweringStrategy {
+    String getAnswer(String question);
+
 }

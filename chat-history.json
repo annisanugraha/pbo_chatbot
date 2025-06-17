@@ -1,0 +1,392 @@
+[
+  {
+    "sender": "BOT",
+    "content": "Halo! Selamat datang kembali.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo! Saya adalah asisten kampus virtual Universitas Dian Nuswantoro. Bagaimana saya dapat membantu Anda hari ini?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "pbo itu kapan ya jadwalnya?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Mata kuliah Pemrograman Berorientasi Objek (PBO) memiliki dua jadwal: hari Rabu pukul 10.20-12.00 di ruang H.5.11, dan hari Jumat pukul 12.30-14.10 di ruang D.2.K.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "kalau jarkom kapan?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jarkom atau 'Jadwal Akademik dan Kegiatan Mahasiswa' biasanya disampaikan langsung oleh Panitia Akademik diUniversitas Dian Nuswantoro, mungkin pada saat pembukaan perkuliahan maupun saat pendaftaran ulang tahunan. Jangan lupa untuk memeriksa informasi lebih lanjut pada website resmi universitas atau konfirmasi langsung dengan Panitia Akademik.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "maksudku jaringan komputer",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Gagal memahami format respons dari AI.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "rektor udinus siapa?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Rektor Universitas Dian Nuswantoro saat ini adalah Prof. Dr. Pulung Nurtantio Andono, S.T., M.Kom.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "baiklah terimaksih",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Gagal memahami format respons dari AI.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "terimakasih",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Gagal memahami format respons dari AI.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo! Selamat datang kembali.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Saya lupa untuk menjawab pertanyaan sebelumnya. Untuk informasi jadwal perkuliahan di Universitas Dian Nuswantoro, silakan hubungi bagian akademik melalui email, telpon, atau kunjungi website resmi universitas. Saya akan tetap memberikan informasi seputar perkuliahan dengan segara.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "aku ada jadwal nggak hari rabu?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jadwal kuliah pada hari Rabu berbeda untuk setiap program studi dan semester yang berbeda. Untuk mengetahui jadwal kuliahmu, silakan login ke AKUN MU (Sistem Informasi Akademis) di website UNIVERSITAS DIAN NUSWANTORO. Atau, hubungi Dosen Pengampu (DPA) mata kuliahmu untuk mengonfirmasi jadwal. Selamat belajar!",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal pbo",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Mata kuliah Pemrograman Berorientasi Objek (PBO) memiliki dua jadwal: hari Rabu pukul 10.20-12.00 di ruang H.5.11, dan hari Jumat pukul 12.30-14.10 di ruang D.2.K.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "lah itu ada di hari rabu, ada pbo di hari rabu",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Maaf, tidak mengerti apa yang Anda maksud. Jadi, apakah Anda memiliki pertanyaan yang lebih khusus tentang Universitas Dian Nuswantoro?",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "udahlah makasihh",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "BOT",
+    "content": "Selesai. Jangan lupa untuk mengunjungi kembali sistem informasi perkuliahan jika ada pertanyaan baru. Semoga kegiatan belajar anda tetap menyenangkan dan bermanfaat.",
+    "timestamp": "2025-06-07T13:26:09.762627700"
+  },
+  {
+    "sender": "USER",
+    "content": "dosen PBO siapa?",
+    "timestamp": "2025-06-07T13:26:37.554667500"
+  },
+  {
+    "sender": "BOT",
+    "content": "Dosen mata kuliah Pemrograman Berorientasi Objek (PBO) adalah DANNY OKA RATMANA M.Kom.",
+    "timestamp": "2025-06-07T13:26:37.560282500"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-07T13:38:08.185232400"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo! Saya adalah asisten kampus virtual yang disini untuk membantu menjawab pertanyaan seputar perkuliahan di Universitas Dian Nuswantoro. Apa yang dapat saya lakukan untuk Anda hari ini?",
+    "timestamp": "2025-06-07T13:38:12.721451100"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal jarkom",
+    "timestamp": "2025-06-07T13:49:36.672028400"
+  },
+  {
+    "sender": "BOT",
+    "content": "Maaf, aku sudah coba cari kemana-mana tapi tetap tidak tahu jawabannya.",
+    "timestamp": "2025-06-07T13:49:36.679033500"
+  },
+  {
+    "sender": "USER",
+    "content": "rektor udinus",
+    "timestamp": "2025-06-07T13:49:45.259769100"
+  },
+  {
+    "sender": "BOT",
+    "content": "Rektor Universitas Dian Nuswantoro saat ini adalah Prof. Dr. Pulung Nurtantio Andono, S.T., M.Kom.",
+    "timestamp": "2025-06-07T13:49:45.264329800"
+  },
+  {
+    "sender": "USER",
+    "content": "sipa dosen pbo",
+    "timestamp": "2025-06-07T15:51:25.803346600"
+  },
+  {
+    "sender": "USER",
+    "content": "dosen pbo",
+    "timestamp": "2025-06-07T15:51:40.697224200"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal senin",
+    "timestamp": "2025-06-07T16:00:56.705709200"
+  },
+  {
+    "sender": "BOT",
+    "content": "Untuk hari Senin, jadwalnya adalah: 12.30-15.00 Rangkaian Logika Digital di H.5.4, dan 15.30-17.10 Pemrograman Web Lanjut di H.6.1.",
+    "timestamp": "2025-06-07T16:00:56.751209400"
+  },
+  {
+    "sender": "USER",
+    "content": "hari senin ada jadwal apa?",
+    "timestamp": "2025-06-07T16:01:09.839463600"
+  },
+  {
+    "sender": "BOT",
+    "content": "Untuk hari Senin, jadwalnya adalah: 12.30-15.00 Rangkaian Logika Digital di H.5.4, dan 15.30-17.10 Pemrograman Web Lanjut di H.6.1.",
+    "timestamp": "2025-06-07T16:01:09.847162400"
+  },
+  {
+    "sender": "USER",
+    "content": "perpus ada di mana yak?",
+    "timestamp": "2025-06-07T16:07:20.779690300"
+  },
+  {
+    "sender": "BOT",
+    "content": "di gedung A",
+    "timestamp": "2025-06-07T16:07:20.789209400"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal jarkom kapan?",
+    "timestamp": "2025-06-07T16:59:22.965602800"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jadwal jarak komputasi (Jarkom) Universitas Dian Nuswantoro biasanya disampaikan pada awal semester. Untuk informasi yang lebih spesifik, silakan periksa bulletin informasi akademik di website resmi universitas atau hubungi bagian yang bersangkutan dengan jadwal ini.",
+    "timestamp": "2025-06-07T16:59:29.729031500"
+  },
+  {
+    "sender": "USER",
+    "content": "maksudku jaringan komputer",
+    "timestamp": "2025-06-07T16:59:45.351272200"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jaringan komputer, juga disebut jaringan informasi atau jaringan komunikasi data, adalah sistem terhubung yang membentang layanan, perangkat, dan sumber daya komputasi yang saling berhubungan melalui media komunikasi. Jaringan komputer mengizinkan pengguna untuk bertukar informasi, membagi sumber daya, dan berbagi file antara komputer yang terhubung. Jaringan komputer dapat berupa jaringan lokal (LAN), jaringan area luas (WAN), jaringan internet, atau jaringan wireless (WLAN).",
+    "timestamp": "2025-06-07T16:59:54.600743200"
+  },
+  {
+    "sender": "USER",
+    "content": "nah adwal jaringan komputer kapan?",
+    "timestamp": "2025-06-07T17:00:14.863654500"
+  },
+  {
+    "sender": "BOT",
+    "content": "Tentang jaringan komputer di Universitas Dian Nuswantoro, biasanya jadwal kuliah komputer tersedia pada hari Senin sampai Jumat, mulai pukul 08.00 WIB sampai 16.00 WIB. Namun, jadwal ini dapat berubah sesuai kebutuhan dan rencana kuliah Anda. Segera hubungi bagian akademik Universitas Dian Nuswantoro jika Anda memiliki pertanyaan lebih lanjut.",
+    "timestamp": "2025-06-07T17:00:22.131393900"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwal jaringan komputer",
+    "timestamp": "2025-06-07T17:00:39.470046300"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jadwal mata kuliah Jaringan Komputer adalah setiap hari Selasa, pukul 15.30-18.00 di ruang H.4.8.",
+    "timestamp": "2025-06-07T17:00:39.472113400"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-07T17:02:09.423190800"
+  },
+  {
+    "sender": "BOT",
+    "content": "Maaf, aku sudah coba cari kemana-mana tapi tetap tidak tahu jawabannya.",
+    "timestamp": "2025-06-07T17:02:09.433704"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-07T17:02:19.676522500"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo! Bagaimana kabarmu hari ini? Saya sih, asisten kampus virtual yang membantu menjawab pertanyaan seputar perkuliahan di Universitas Dian Nuswantoro. Jadi, apa yang kamu butuh bantuin?",
+    "timestamp": "2025-06-07T17:02:24.483514700"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-09T23:00:19.567734900"
+  },
+  {
+    "sender": "BOT",
+    "content": "Maaf, aku sudah coba cari kemana-mana tapi tetap tidak tahu jawabannya.",
+    "timestamp": "2025-06-09T23:00:19.587632400"
+  },
+  {
+    "sender": "USER",
+    "content": "halo",
+    "timestamp": "2025-06-09T23:00:44.226697500"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo! Saya adalah asisten kampus virtual yang disini untuk membantu menjawab pertanyaan seputar perkuliahan di Universitas Dian Nuswantoro. Ada yang perlu saya bantu?",
+    "timestamp": "2025-06-09T23:00:48.817400300"
+  },
+  {
+    "sender": "USER",
+    "content": "info perpus",
+    "timestamp": "2025-06-09T23:00:57.764956200"
+  },
+  {
+    "sender": "BOT",
+    "content": "di gedung B",
+    "timestamp": "2025-06-09T23:00:57.770800100"
+  },
+  {
+    "sender": "USER",
+    "content": "ak mau ambil krs",
+    "timestamp": "2025-06-09T23:45:51.954929100"
+  },
+  {
+    "sender": "BOT",
+    "content": "KRS diisi secara online melalui portal Siadin. Panduan lengkapnya terdapat di menu Akademik > Input-Edit KRS.",
+    "timestamp": "2025-06-09T23:45:51.975998900"
+  },
+  {
+    "sender": "USER",
+    "content": "hi",
+    "timestamp": "2025-06-11T08:13:17.288618600"
+  },
+  {
+    "sender": "BOT",
+    "content": "Halo. Bagaimana harinya? Jadi asisten kampus virtual yang membantu menjawab pertanyaan seputar perkuliahan di Universitas Dian Nuswantoro. Silakan tanyajikan apa yang kamu inginkan.",
+    "timestamp": "2025-06-11T08:13:22.115228200"
+  },
+  {
+    "sender": "USER",
+    "content": "hi hello",
+    "timestamp": "2025-06-11T08:40:45.490389600"
+  },
+  {
+    "sender": "BOT",
+    "content": "Maaf, aku sudah coba cari kemana-mana tapi tetap tidak tahu jawabannya.",
+    "timestamp": "2025-06-11T08:40:45.498401400"
+  },
+  {
+    "sender": "USER",
+    "content": "hi hello",
+    "timestamp": "2025-06-11T08:40:51.784377100"
+  },
+  {
+    "sender": "BOT",
+    "content": "Hi! Bagaimana harinya?",
+    "timestamp": "2025-06-11T08:40:53.511677600"
+  },
+  {
+    "sender": "USER",
+    "content": "aku mau tanya seputar krs",
+    "timestamp": "2025-06-11T08:41:03.689928"
+  },
+  {
+    "sender": "BOT",
+    "content": "KRS diisi secara online melalui portal Siadin. Panduan lengkapnya terdapat di menu Akademik > Input-Edit KRS.",
+    "timestamp": "2025-06-11T08:41:03.692940400"
+  },
+  {
+    "sender": "USER",
+    "content": "perpus berbayar nggak?",
+    "timestamp": "2025-06-11T08:55:05.164485100"
+  },
+  {
+    "sender": "BOT",
+    "content": "Di gedung B",
+    "timestamp": "2025-06-11T08:55:05.176526"
+  },
+  {
+    "sender": "USER",
+    "content": "perpus berbayar nggak?",
+    "timestamp": "2025-06-11T09:05:14.317782100"
+  },
+  {
+    "sender": "BOT",
+    "content": "Perpustakaan di Universitas Dian Nuswantoro memiliki koleksi yang luas, termasuk perpustakaan digital. Namun, akses ke beberapa sumber mungkin memerlukan biaya tambahan. Untuk informasi lebih lanjut, silakan hubungi bagian perpustakaan di Gedung B.",
+    "timestamp": "2025-06-11T09:05:20.585834900"
+  },
+  {
+    "sender": "USER",
+    "content": "siapa dosen-dosen udinus?",
+    "timestamp": "2025-06-11T09:05:43.763432900"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jawapanku: Dosen Undinus berasal dari berbagai bidang dan memiliki latar belakang pendidikan yang berbeda. Untuk informasi lebih detail tentang daftar dosen Undinus, silakan hubungi bagian Humas di Gedung A.",
+    "timestamp": "2025-06-11T09:05:48.367318300"
+  },
+  {
+    "sender": "USER",
+    "content": "jadwalku hari senin apa?",
+    "timestamp": "2025-06-11T09:06:13.555237"
+  },
+  {
+    "sender": "BOT",
+    "content": "Jadwal pada hari Senin adalah: 12.30-15.00 Rangkaian Logika Digital di H.5.4, dan 15.30-17.10 Pemrograman Web Lanjut di H.6.1.",
+    "timestamp": "2025-06-11T09:06:17.714036900"
+  }
+]
